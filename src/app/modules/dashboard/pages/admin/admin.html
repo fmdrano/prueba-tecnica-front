@@ -1,0 +1,136 @@
+<div class="dashboard-container">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="./your-admin-logo.svg" alt="Admin Logo" class="sidebar-logo">
+      <h2 class="sidebar-title">Admin Dashboard</h2>
+    </div>
+
+    <nav class="sidebar-nav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard/overview" routerLinkActive="active-link">
+          <mat-icon>dashboard</mat-icon>
+          <span>Inicio</span>
+        </a>
+        <a mat-list-item routerLink="/dashboard/users" routerLinkActive="active-link">
+          <mat-icon>people</mat-icon>
+          <span>Usuarios</span>
+        </a>
+        <a mat-list-item routerLink="/dashboard/products" routerLinkActive="active-link">
+          <mat-icon>inventory_2</mat-icon>
+          <span>Productos</span>
+        </a>
+        <a mat-list-item routerLink="/dashboard/orders" routerLinkActive="active-link">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>Pedidos</span>
+        </a>
+        <a mat-list-item routerLink="/dashboard/reports" routerLinkActive="active-link">
+          <mat-icon>bar_chart</mat-icon>
+          <span>Reportes</span>
+        </a>
+        <a mat-list-item routerLink="/dashboard/settings" routerLinkActive="active-link">
+          <mat-icon>settings</mat-icon>
+          <span>Configuración</span>
+        </a>
+      </mat-nav-list>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button mat-button class="logout-button">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <mat-toolbar class="navbar">
+      <div class="navbar-left">
+        <button mat-icon-button class="menu-toggle-button">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="navbar-title">Panel de Administración</span>
+      </div>
+
+      <div class="navbar-center">
+        <div class="search-bar">
+          <mat-icon class="search-icon">search</mat-icon>
+          <input type="text" placeholder="Buscar..." class="search-input">
+        </div>
+      </div>
+
+      <div class="navbar-right">
+        <button mat-icon-button class="notification-button">
+          <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" class="profile-button">
+          <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-avatar">
+        </button>
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>Mi Perfil</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Ajustes</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Cerrar Sesión</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <div class="dashboard-content-area">
+      <router-outlet></router-outlet>
+
+      <div class="overview-section" *ngIf="false"> <h2>Bienvenido al Dashboard</h2>
+        <div class="stats-grid">
+          <mat-card class="stat-card">
+            <mat-card-header>
+              <mat-card-title>Usuarios Activos</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <h3>1,234</h3>
+              <p>+15% desde la semana pasada</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="stat-card">
+            <mat-card-header>
+              <mat-card-title>Ventas del Mes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <h3>$56,789</h3>
+              <p>+10% desde el mes pasado</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="stat-card">
+            <mat-card-header>
+              <mat-card-title>Nuevos Pedidos</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <h3>87</h3>
+              <p>Hoy</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <mat-card class="recent-activity-card">
+          <mat-card-header>
+            <mat-card-title>Actividad Reciente</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li>Usuario "Juan Pérez" se registró.</li>
+              <li>Nuevo producto "Auriculares XYZ" añadido.</li>
+              <li>Pedido #12345 completado.</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </main>
+</div>

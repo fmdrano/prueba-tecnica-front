@@ -1,0 +1,387 @@
+/* Fondo negro para todo el contenedor principal */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #000000; /* Fondo negro */
+  color: #ffffff; /* Texto blanco */
+  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ============================================
+   Angular Material Fields - Versión mejorada para v20
+   ============================================ */
+::ng-deep .mat-mdc-form-field {
+  width: 100% !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Labels flotantes - Colores mejorados */
+::ng-deep .mat-mdc-form-field .mdc-floating-label {
+  color: #00e5ff !important; /* Turquesa para labels */
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: #1de9b6 !important; /* Verde cuando está enfocado */
+}
+
+/* Bordes del outline - Mejorados */
+::ng-deep .mat-mdc-form-field .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field .mdc-notched-outline__trailing,
+::ng-deep .mat-mdc-form-field .mdc-notched-outline__notch {
+  border-color: rgba(0, 229, 255, 0.5) !important; /* Borde turquesa */
+  border-width: 1px !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch {
+  border-color: #1de9b6 !important; /* Verde al enfocar */
+  border-width: 2px !important;
+  box-shadow: 0 0 8px rgba(29, 233, 182, 0.3) !important; /* Brillo */
+}
+
+/* Hover states */
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__trailing,
+::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline__notch {
+  border-color: #00e5ff !important;
+}
+
+/* Input text - Mejorado */
+::ng-deep .mat-mdc-input-element {
+  color: #ffffff !important; /* Texto blanco */
+  font-size: 0.95rem !important;
+  padding: 1rem 0.75rem !important;
+  background-color: transparent !important;
+  /* Eliminar autocompletado amarillo */
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Forzar colores en autocompletado */
+::ng-deep .mat-mdc-input-element:-webkit-autofill,
+::ng-deep .mat-mdc-input-element:-webkit-autofill:hover,
+::ng-deep .mat-mdc-input-element:-webkit-autofill:focus,
+::ng-deep .mat-mdc-input-element:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #121212 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Placeholder */
+::ng-deep .mat-mdc-input-element::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+/* Wrapper del campo */
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+  border-radius: 8px !important;
+}
+
+/* ============================================
+   Logo y contenedores
+   ============================================ */
+.container.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* .container.text-center img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+} */
+
+.container.text-center img {
+  width: 420px;  /* Aumentado de 64px */
+  height: auto;  /* Mantener proporción */
+  max-height: 360px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.7)); /* Más brillo */
+  transition: transform 0.3s ease;
+}
+
+.container.text-center img:hover {
+  transform: scale(3.05);
+}
+
+
+/* Sección del formulario */
+.login-form-section {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+/* Estilo de la tarjeta (mat-card) */
+mat-card {
+  background-color: #121212 !important; /* Gris muy oscuro */
+  color: #ffffff !important;
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 0 30px rgba(0, 229, 255, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.8) !important; /* Brillo turquesa + sombra */
+  border: 1px solid rgba(0, 229, 255, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Estilo para el formulario */
+.full-width {
+  width: 100%;
+}
+
+/* Checkbox mejorado */
+.checkbox-container {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+  accent-color: #00e5ff; /* Turquesa */
+  margin-right: 0.75rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.checkbox-container:hover label {
+  color: #00e5ff;
+}
+
+/* ============================================
+   Botones mejorados
+   ============================================ */
+.container.text-center {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+::ng-deep .mat-mdc-raised-button.login {
+  background-color: #00e5ff !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 0.9rem !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow:
+    0 4px 15px rgba(0, 229, 255, 0.4),
+    0 0 20px rgba(0, 229, 255, 0.2) !important;
+  border: none !important;
+}
+
+::ng-deep .mat-mdc-raised-button.login:hover {
+  background-color: #1de9b6 !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 6px 20px rgba(29, 233, 182, 0.5),
+    0 0 30px rgba(29, 233, 182, 0.3) !important;
+}
+
+::ng-deep .mat-mdc-raised-button.create {
+  background-color: transparent !important;
+  color: #1de9b6 !important;
+  font-weight: 600 !important;
+  border: 2px solid #1de9b6 !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 0.9rem !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 15px rgba(29, 233, 182, 0.2) !important;
+}
+
+::ng-deep .mat-mdc-raised-button.create:hover {
+  background-color: rgba(29, 233, 182, 0.1) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 25px rgba(29, 233, 182, 0.4) !important;
+}
+
+/* ============================================
+   Loader cyberpunk
+   ============================================ */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000, #0a0a0a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.pulse-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-logo {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  z-index: 3;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5));
+}
+
+.pulse-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Animación del latido del corazón */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5));
+  }
+  14% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.8));
+  }
+  28% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5));
+  }
+  42% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(29, 233, 182, 0.8));
+  }
+  70% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5));
+  }
+}
+
+/* Texto de carga */
+.loading-text {
+  margin-top: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  animation: text-pulse 2s ease-in-out infinite;
+  letter-spacing: 0.1em;
+}
+
+@keyframes text-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.loading-dots span {
+  display: inline-block;
+  animation: dot-bounce 1.4s ease-in-out infinite both;
+  color: #00e5ff;
+  font-size: 1.2rem;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+.loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes dot-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Responsividad
+   ============================================ */
+@media (max-width: 640px) {
+  .login-container {
+    padding: 0.5rem;
+  }
+
+  mat-card {
+    padding: 1.5rem !important;
+    margin: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .container.text-center {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  ::ng-deep .mat-mdc-raised-button.login,
+  ::ng-deep .mat-mdc-raised-button.create {
+    width: 100%;
+    padding: 0.875rem 1rem !important;
+  }
+
+  .container.text-center img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  mat-card {
+    padding: 1rem !important;
+  }
+}

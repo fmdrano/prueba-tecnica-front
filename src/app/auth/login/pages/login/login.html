@@ -1,0 +1,85 @@
+<!-- ============================================
+     HTML TEMPLATE - Agrega esto al inicio de tu login.component.html
+     ============================================ -->
+
+<!-- Loader Pulse/Heartbeat -->
+<div class="loader-container" *ngIf="isLoading">
+  <div class="pulse-container">
+    <!-- Ondas expandiéndose -->
+    <div class="pulse-wave"></div>
+    <div class="pulse-wave"></div>
+    <div class="pulse-wave"></div>
+    <div class="pulse-wave"></div>
+
+    <!-- Partículas flotantes -->
+    <div class="pulse-particle"></div>
+    <div class="pulse-particle"></div>
+    <div class="pulse-particle"></div>
+    <div class="pulse-particle"></div>
+    <div class="pulse-particle"></div>
+    <div class="pulse-particle"></div>
+
+    <!-- Logo central que late -->
+    <div class="pulse-logo">
+      <img src="./ufg-logo-temp.svg" alt="Taber Kids Logo" />
+    </div>
+
+    <!-- Texto de carga -->
+    <div class="loading-text">
+      Iniciando sesión
+      <div class="loading-dots">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="login-container" *ngIf="!isLoading">
+  <!-- Contenedor de información -->
+  <div class="login-info-section">
+    <div class="login-info">
+    </div>
+  </div>
+
+  <!-- Contenedor del formulario -->
+  <div class="login-form-section">
+    <div class="form-wrapper">
+      <mat-card>
+        <div class="container text-center">
+          <img src="./ufg-logo-temp.png" width="100%" height="100%" />
+        </div>
+        <h2>Inicio de sesión</h2>
+        <form (ngSubmit)="formSubmit()">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Nombre de usuario</mat-label>
+            <input [(ngModel)]="loginData.username" name="username" required matInput
+              placeholder="Digite su nombre de usuario" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input [(ngModel)]="loginData.password" name="password" [type]="showPassword ? 'text' : 'password'" required
+              matInput placeholder="Digite su contraseña" />
+          </mat-form-field>
+
+          <div class="checkbox-container">
+            <input type="checkbox" [(ngModel)]="showPassword" name="showPassword" id="showPassword" />
+            <label for="showPassword">Mostrar contraseña</label>
+          </div>
+
+          <div class="container text-center">
+            <button mat-raised-button class="login">Iniciar sesión</button>
+            <button *ngIf="mostrarBoton" class="create" style="margin-left: 20px" mat-raised-button (click)="signup()">
+              Crear Cuenta
+            </button>
+          </div>
+        </form>
+        <br />
+      </mat-card>
+    </div>
+  </div>
+</div>
+<!-- <div class="logo-container">
+  <img src="./logo kids.svg" class="tk-logo" /> -->

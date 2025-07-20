@@ -1,0 +1,42 @@
+<!-- header.component.html -->
+<header class="vet-header">
+  <div class="container">
+    <div class="logo-container">
+      <img src="logo empresa.svg" alt="Logo Empresa" class="logo">
+      <h1>UFG | MM103821</h1>
+    </div>
+
+    <!-- Botón para abrir el sidenav - añadido fuera del sidenav -->
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <!-- <button class="cta-button">Reservar Cita</button> -->
+
+    <!-- Información del usuario si está autenticado -->
+      <span *ngIf="isAuthenticated && currentUser" class="user-info">
+        Hola, {{ currentUser.username || currentUser.email }}
+      </span>
+
+      <button class="cta-button"
+        routerLink="/auth/login"
+        routerLinkActive="active">
+        LOGIN
+      </button>
+
+      <!-- Botón de logout que solo aparece en rutas específicas -->
+      <button
+        *ngIf="showLogoutButton"
+        class="logout-button"
+        [class.logging-out]="isLoggingOut"
+        [disabled]="isLoggingOut"
+        type="button"
+        (click)="onLogoutClick()"
+        title="Cerrar sesión">
+
+        <!-- <span class="button-text">{{ getLogoutButtonText() }}</span> -->
+         <span class="button-text">LogOut</span>
+
+        <!-- Spinner de carga -->
+        <span *ngIf="isLoggingOut" class="spinner"></span>
+      </button>
+  </div>
+</header>

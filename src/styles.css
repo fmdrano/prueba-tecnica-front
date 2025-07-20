@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Ajusta el contenedor principal para que el footer no se superponga */
+.main-content {
+    min-height: calc(100vh - 120px); /* Ajusta según el tamaño de tu header y footer */
+    padding-bottom: 60px; /* Espacio adicional en la parte inferior */
+  }
+
+  /* styles.css - Global styles */
+.custom-dialog-container .mat-mdc-dialog-container {
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+/* Asegurar que el diálogo no tenga scroll horizontal */
+.mat-mdc-dialog-container {
+  overflow-x: hidden !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
