@@ -23,6 +23,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "ethers"
+            ],
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"

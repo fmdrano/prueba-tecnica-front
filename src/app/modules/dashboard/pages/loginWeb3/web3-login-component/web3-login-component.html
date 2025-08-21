@@ -1,0 +1,82 @@
+<div class="wallet-container">
+      <!-- Estado no conectado -->
+      <div *ngIf="!walletInfo" class="login-section">
+        <div class="wallet-card">
+          <div class="wallet-header">
+            <h2>Conectar Wallet</h2>
+            <p>Conecta tu wallet de Ethereum para acceder a la aplicación</p>
+          </div>
+          
+          <div class="wallet-content">
+            <div class="network-info">
+              <span class="network-badge">Ethereum Mainnet</span>
+            </div>
+            
+            <button 
+              class="connect-button"
+              (click)="connectWallet()"
+              [disabled]="isConnecting">
+              <span *ngIf="!isConnecting">Conectar con MetaMask</span>
+              <span *ngIf="isConnecting">Conectando...</span>
+            </button>
+            
+            <div class="requirements">
+              <h4>Requisitos:</h4>
+              <ul>
+                <li>MetaMask instalado en tu navegador</li>
+                <li>Cuenta configurada en Ethereum Mainnet</li>
+                <li>ETH para transacciones (gas fees)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mensaje de error -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+      <!-- Estado conectado -->
+      <div *ngIf="walletInfo" class="wallet-info-section">
+        <div class="wallet-card connected">
+          <div class="wallet-header">
+            <h2>Wallet Conectada</h2>
+            <button class="disconnect-button" (click)="disconnectWallet()">
+              Desconectar
+            </button>
+          </div>
+          
+          <div class="wallet-details">
+            <div class="detail-item">
+              <label>Dirección:</label>
+              <div class="address">
+                <span>{{ formatAddress(walletInfo.address) }}</span>
+                <button class="copy-button" (click)="copyAddress()">📋</button>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <label>Balance ETH:</label>
+              <span class="balance">{{ formatBalance(walletInfo.balance) }} ETH</span>
+            </div>
+            
+            <div class="detail-item">
+              <label>Red:</label>
+              <span class="network">
+                {{ walletInfo.chainId === 1 ? 'Ethereum Mainnet' : 'Red Desconocida' }}
+              </span>
+            </div>
+          </div>
+
+          <div class="wallet-actions">
+            <button class="action-button primary" (click)="refreshBalance()">
+             Actualizar Balance
+            </button>
+            <button class="action-button secondary" (click)="viewOnEtherscan()">
+              Ver en Etherscan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
